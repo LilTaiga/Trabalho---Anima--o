@@ -12,7 +12,7 @@ using namespace std;
 #define WIDTH 600
 #define HEIGHT 600
 
-extern int index;
+extern int frame;
 
 void init();
 void displayCallback();
@@ -27,7 +27,7 @@ int main(int argc, char** argv)
 	// Inicialização do glut
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
-	glutInitWindowPosition((glutGet(GLUT_SCREEN_WIDTH) - WIDTH) / 2, 
+	glutInitWindowPosition((glutGet(GLUT_SCREEN_WIDTH) - WIDTH) / 2,
 		(glutGet(GLUT_SCREEN_HEIGHT) - HEIGHT) / 2);
 	glutInitWindowSize(WIDTH, HEIGHT);
 	glutCreateWindow("ANIMATION");
@@ -84,12 +84,12 @@ void keybordCallback(unsigned char key, int, int)
 {
 	switch (key)
 	{
-	// Fecha a janela caso ESC tenha sido pressionado.
+		// Fecha a janela caso ESC tenha sido pressionado.
 	case 27:
 		exit(0);
 		break;
 
-	// Renderiza o desenho caso SPACE tenha sido pressionado.
+		// Renderiza o desenho caso SPACE tenha sido pressionado.
 	case 32:
 		displayCallback();
 		break;
