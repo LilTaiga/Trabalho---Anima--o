@@ -8,7 +8,7 @@
 
 // Dados do mundo
 int gridX, gridY;
-int index = 0;
+int frame = 0;
 
 int columnColorOneInit12_27;
 int columnColorOne12_27;
@@ -80,7 +80,7 @@ void unit(int x, int y)
 // Definição da lógica de movimento do mundo.
 void drawBotamon()
 {
-	switch (index)
+	switch (frame)
 	{
 	case 0:
 		columnColorOneInit12_27 = 3;
@@ -115,7 +115,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 5;
 		columnColorFive16_17_22_23 = 1;
-		index++;
+		frame++;
 		break;
 
 	case 1:
@@ -151,7 +151,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 5;
 		columnColorFive16_17_22_23 = 1;
-		index++;
+		frame++;
 		break;
 
 	case 2:
@@ -187,7 +187,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 5;
 		columnColorFive16_17_22_23 = 1;
-		index++;
+		frame++;
 		break;
 
 	case 3:
@@ -223,7 +223,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 5;
 		columnColorFive16_17_22_23 = 0;
-		index++;
+		frame++;
 		break;
 
 	case 4:
@@ -259,7 +259,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 5;
 		columnColorFive16_17_22_23 = 1;
-		index++;
+		frame++;
 		break;
 
 	case 5:
@@ -295,7 +295,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 5;
 		columnColorFive16_17_22_23 = 1;
-		index++;
+		frame++;
 		break;
 
 	case 6:
@@ -331,7 +331,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 5;
 		columnColorFive16_17_22_23 = 1;
-		index++;
+		frame++;
 		break;
 
 	case 7:
@@ -367,7 +367,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 5;
 		columnColorFive16_17_22_23 = 1;
-		index++;
+		frame++;
 		break;
 
 	case 8:
@@ -403,7 +403,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 4;
 		columnColorFive16_17_22_23 = 1;
-		index++;
+		frame++;
 		break;
 
 	case 9:
@@ -439,7 +439,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 3;
 		columnColorFive16_17_22_23 = 1;
-		index++;
+		frame++;
 		break;
 
 	case 10:
@@ -475,7 +475,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 13;
 		columnColorFive16_17_22_23 = 2;
-		index++;
+		frame++;
 		break;
 
 	case 11:
@@ -511,7 +511,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 20;
 		columnColorFive16_17_22_23 = 1;
-		index++;
+		frame++;
 		break;
 
 	case 12:
@@ -547,7 +547,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 21;
 		columnColorFive16_17_22_23 = 1;
-		index++;
+		frame++;
 		break;
 
 	case 13:
@@ -583,7 +583,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 20;
 		columnColorFive16_17_22_23 = 1;
-		index++;
+		frame++;
 		break;
 
 	case 14:
@@ -619,7 +619,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 13;
 		columnColorFive16_17_22_23 = 2;
-		index++;
+		frame++;
 		break;
 
 	case 15:
@@ -655,7 +655,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 5;
 		columnColorFive16_17_22_23 = 1;
-		index++;
+		frame++;
 		break;
 
 	case 16:
@@ -691,7 +691,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 4;
 		columnColorFive16_17_22_23 = 1;
-		index++;
+		frame++;
 		break;
 
 	case 17:
@@ -727,7 +727,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 5;
 		columnColorFive16_17_22_23 = 1;
-		index++;
+		frame++;
 		break;
 
 	case 18:
@@ -763,11 +763,11 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 5;
 		columnColorFive16_17_22_23 = 1;
-		index = 0;
+		frame = 0;
 		break;
 
 	default:
-		index = 0;
+		frame = 0;
 		break;
 	}
 

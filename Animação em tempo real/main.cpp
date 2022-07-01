@@ -23,13 +23,13 @@ void keybordCallback(unsigned char, int, int);
 // Inicialização do openGL
 // Criação da janela
 // Definição das funções de callback
-int main(int argc, char** argv)
+int main(int argc, char **argv)
 {
 	// Inicialização do glut
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
 	glutInitWindowPosition((glutGet(GLUT_SCREEN_WIDTH) - WIDTH) / 2,
-		(glutGet(GLUT_SCREEN_HEIGHT) - HEIGHT) / 2);
+												 (glutGet(GLUT_SCREEN_HEIGHT) - HEIGHT) / 2);
 	glutInitWindowSize(WIDTH, HEIGHT);
 	glutCreateWindow("ANIMATION");
 	init();
@@ -55,19 +55,20 @@ void init()
 }
 
 // Aqui é onde a camera faz o render do mundo.
-// O render também é exibido na tela aqui ???????
+// O render também é exibido na tela aqui
 void displayCallback()
 {
 	glClear(GL_COLOR_BUFFER_BIT);
-	
+
 	// Aqui a camera faz o render do mundo.
 	drawGrid();
 	drawBotamon();
 
-	// Aqui o render é exibido na tela ????????
+	// Aqui o render é exibido na tela
 	glutSwapBuffers();
 }
 
+// Remodela o viewPort para manter as proporções
 void reshapeCallback(int w, int h)
 {
 	if (w >= h)
@@ -93,11 +94,11 @@ void timerCallback(int)
 }
 
 // Intercepta comandos do teclado.
-// Não faz nada além de fechar a janela caso ESC tenha sido pressionado.
 void keybordCallback(unsigned char key, int, int)
 {
 	switch (key)
 	{
+	// Fecha a janela caso ESC tenha sido pressionado.
 	case 27:
 		exit(0);
 		break;
