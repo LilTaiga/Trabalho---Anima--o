@@ -1,10 +1,14 @@
+// Aqui é onde estão definidos os dados do mundo.
+// Algumas funções de renderização também estão aqui por algum motivo.
+
 #include <GL/glut.h>
 #include <GL/gl.h>
 #include <ctime>
 #include "game.h"
 
+// Dados do mundo
 int gridX, gridY;
-extern int index = 0;
+int frame = 0;
 
 int columnColorOneInit12_27;
 int columnColorOne12_27;
@@ -47,6 +51,7 @@ void initGrid(int x, int y)
 	gridY = y;
 }
 
+// Aqui é uma função para renderizar cada célula da grade do mundo.
 void drawGrid()
 {
 	for (size_t i = 0; i <= gridX; i++)
@@ -58,22 +63,24 @@ void drawGrid()
 	}
 }
 
+// Renderiza uma célula da grade do mundo.
 void unit(int x, int y)
 {
 	glLineWidth(1.0);
 	glColor3f(0.7, 0.7, 0.7);
 
 	glBegin(GL_LINE_LOOP);
-	glVertex2f(x, y);
-	glVertex2f(x + 1, y);
-	glVertex2f(x + 1, y + 1);
-	glVertex2f(x, y + 1);
+		glVertex2f(x, y);
+		glVertex2f(x + 1, y);
+		glVertex2f(x + 1, y + 1);
+		glVertex2f(x, y + 1);
 	glEnd();
 }
 
+// Definição da lógica de movimento do mundo.
 void drawBotamon()
 {
-	switch (index)
+	switch (frame)
 	{
 	case 0:
 		columnColorOneInit12_27 = 3;
@@ -108,7 +115,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 5;
 		columnColorFive16_17_22_23 = 1;
-		index++;
+		frame++;
 		break;
 
 	case 1:
@@ -144,7 +151,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 5;
 		columnColorFive16_17_22_23 = 1;
-		index++;
+		frame++;
 		break;
 
 	case 2:
@@ -180,7 +187,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 5;
 		columnColorFive16_17_22_23 = 1;
-		index++;
+		frame++;
 		break;
 
 	case 3:
@@ -216,7 +223,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 5;
 		columnColorFive16_17_22_23 = 0;
-		index++;
+		frame++;
 		break;
 
 	case 4:
@@ -252,7 +259,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 5;
 		columnColorFive16_17_22_23 = 1;
-		index++;
+		frame++;
 		break;
 
 	case 5:
@@ -288,7 +295,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 5;
 		columnColorFive16_17_22_23 = 1;
-		index++;
+		frame++;
 		break;
 
 	case 6:
@@ -324,7 +331,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 5;
 		columnColorFive16_17_22_23 = 1;
-		index++;
+		frame++;
 		break;
 
 	case 7:
@@ -360,7 +367,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 5;
 		columnColorFive16_17_22_23 = 1;
-		index++;
+		frame++;
 		break;
 
 	case 8:
@@ -396,7 +403,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 4;
 		columnColorFive16_17_22_23 = 1;
-		index++;
+		frame++;
 		break;
 
 	case 9:
@@ -432,7 +439,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 3;
 		columnColorFive16_17_22_23 = 1;
-		index++;
+		frame++;
 		break;
 
 	case 10:
@@ -468,7 +475,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 13;
 		columnColorFive16_17_22_23 = 2;
-		index++;
+		frame++;
 		break;
 
 	case 11:
@@ -504,7 +511,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 20;
 		columnColorFive16_17_22_23 = 1;
-		index++;
+		frame++;
 		break;
 
 	case 12:
@@ -540,7 +547,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 21;
 		columnColorFive16_17_22_23 = 1;
-		index++;
+		frame++;
 		break;
 
 	case 13:
@@ -576,7 +583,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 20;
 		columnColorFive16_17_22_23 = 1;
-		index++;
+		frame++;
 		break;
 
 	case 14:
@@ -612,7 +619,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 13;
 		columnColorFive16_17_22_23 = 2;
-		index++;
+		frame++;
 		break;
 
 	case 15:
@@ -648,7 +655,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 5;
 		columnColorFive16_17_22_23 = 1;
-		index++;
+		frame++;
 		break;
 
 	case 16:
@@ -684,7 +691,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 4;
 		columnColorFive16_17_22_23 = 1;
-		index++;
+		frame++;
 		break;
 
 	case 17:
@@ -720,7 +727,7 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 5;
 		columnColorFive16_17_22_23 = 1;
-		index++;
+		frame++;
 		break;
 
 	case 18:
@@ -756,149 +763,149 @@ void drawBotamon()
 
 		columnColorFiveInit16_17_22_23 = 5;
 		columnColorFive16_17_22_23 = 1;
-		index = 0;
+		frame = 0;
 		break;
 
 	default:
-		index = 0;
+		frame = 0;
 		break;
 	}
 
 	glBegin(GL_QUADS);
-	glColor3f(0, 0, 0);
-	
-	glVertex2f(12, columnColorOneInit12_27);
-	glVertex2f(13, columnColorOneInit12_27);
-	glVertex2f(13, columnColorOneInit12_27 + columnColorOne12_27);
-	glVertex2f(12, columnColorOneInit12_27 + columnColorOne12_27);
+		glColor3f(0, 0, 0);
 
-	glVertex2f(27, columnColorOneInit12_27);
-	glVertex2f(28, columnColorOneInit12_27);
-	glVertex2f(28, columnColorOneInit12_27 + columnColorOne12_27);
-	glVertex2f(27, columnColorOneInit12_27 + columnColorOne12_27);
+		glVertex2f(12, columnColorOneInit12_27);
+		glVertex2f(13, columnColorOneInit12_27);
+		glVertex2f(13, columnColorOneInit12_27 + columnColorOne12_27);
+		glVertex2f(12, columnColorOneInit12_27 + columnColorOne12_27);
 
-	glVertex2f(13, columnColorOneInit13_26);
-	glVertex2f(14, columnColorOneInit13_26);
-	glVertex2f(14, columnColorOneInit13_26 + columnColorOne13_26);
-	glVertex2f(13, columnColorOneInit13_26 + columnColorOne13_26);
+		glVertex2f(27, columnColorOneInit12_27);
+		glVertex2f(28, columnColorOneInit12_27);
+		glVertex2f(28, columnColorOneInit12_27 + columnColorOne12_27);
+		glVertex2f(27, columnColorOneInit12_27 + columnColorOne12_27);
 
-	glVertex2f(26, columnColorOneInit13_26);
-	glVertex2f(27, columnColorOneInit13_26);
-	glVertex2f(27, columnColorOneInit13_26 + columnColorOne13_26);
-	glVertex2f(26, columnColorOneInit13_26 + columnColorOne13_26);
+		glVertex2f(13, columnColorOneInit13_26);
+		glVertex2f(14, columnColorOneInit13_26);
+		glVertex2f(14, columnColorOneInit13_26 + columnColorOne13_26);
+		glVertex2f(13, columnColorOneInit13_26 + columnColorOne13_26);
 
-	glVertex2f(14, columnColorOneInit14_25);
-	glVertex2f(15, columnColorOneInit14_25);
-	glVertex2f(15, columnColorOneInit14_25 + columnColorOne14_25);
-	glVertex2f(14, columnColorOneInit14_25 + columnColorOne14_25);
+		glVertex2f(26, columnColorOneInit13_26);
+		glVertex2f(27, columnColorOneInit13_26);
+		glVertex2f(27, columnColorOneInit13_26 + columnColorOne13_26);
+		glVertex2f(26, columnColorOneInit13_26 + columnColorOne13_26);
 
-	glVertex2f(25, columnColorOneInit14_25);
-	glVertex2f(26, columnColorOneInit14_25);
-	glVertex2f(26, columnColorOneInit14_25 + columnColorOne14_25);
-	glVertex2f(25, columnColorOneInit14_25 + columnColorOne14_25);
+		glVertex2f(14, columnColorOneInit14_25);
+		glVertex2f(15, columnColorOneInit14_25);
+		glVertex2f(15, columnColorOneInit14_25 + columnColorOne14_25);
+		glVertex2f(14, columnColorOneInit14_25 + columnColorOne14_25);
 
-	glVertex2f(15, columnColorOneInit15_24);
-	glVertex2f(16, columnColorOneInit15_24);
-	glVertex2f(16, columnColorOneInit15_24 + columnColorOne15_24);
-	glVertex2f(15, columnColorOneInit15_24 + columnColorOne15_24);
+		glVertex2f(25, columnColorOneInit14_25);
+		glVertex2f(26, columnColorOneInit14_25);
+		glVertex2f(26, columnColorOneInit14_25 + columnColorOne14_25);
+		glVertex2f(25, columnColorOneInit14_25 + columnColorOne14_25);
 
-	glVertex2f(24, columnColorOneInit15_24);
-	glVertex2f(25, columnColorOneInit15_24);
-	glVertex2f(25, columnColorOneInit15_24 + columnColorOne15_24);
-	glVertex2f(24, columnColorOneInit15_24 + columnColorOne15_24);
+		glVertex2f(15, columnColorOneInit15_24);
+		glVertex2f(16, columnColorOneInit15_24);
+		glVertex2f(16, columnColorOneInit15_24 + columnColorOne15_24);
+		glVertex2f(15, columnColorOneInit15_24 + columnColorOne15_24);
 
-	glVertex2f(16, columnColorOneInit16_23);
-	glVertex2f(17, columnColorOneInit16_23);
-	glVertex2f(17, columnColorOneInit16_23 + columnColorOne16_23);
-	glVertex2f(16, columnColorOneInit16_23 + columnColorOne16_23);
+		glVertex2f(24, columnColorOneInit15_24);
+		glVertex2f(25, columnColorOneInit15_24);
+		glVertex2f(25, columnColorOneInit15_24 + columnColorOne15_24);
+		glVertex2f(24, columnColorOneInit15_24 + columnColorOne15_24);
 
-	glVertex2f(23, columnColorOneInit16_23);
-	glVertex2f(24, columnColorOneInit16_23);
-	glVertex2f(24, columnColorOneInit16_23 + columnColorOne16_23);
-	glVertex2f(23, columnColorOneInit16_23 + columnColorOne16_23);
+		glVertex2f(16, columnColorOneInit16_23);
+		glVertex2f(17, columnColorOneInit16_23);
+		glVertex2f(17, columnColorOneInit16_23 + columnColorOne16_23);
+		glVertex2f(16, columnColorOneInit16_23 + columnColorOne16_23);
 
-	glVertex2f(17, columnColorOneInit17__22);
-	glVertex2f(23, columnColorOneInit17__22);
-	glVertex2f(23, columnColorOneInit17__22 + columnColorOne17__22);
-	glVertex2f(17, columnColorOneInit17__22 + columnColorOne17__22);
+		glVertex2f(23, columnColorOneInit16_23);
+		glVertex2f(24, columnColorOneInit16_23);
+		glVertex2f(24, columnColorOneInit16_23 + columnColorOne16_23);
+		glVertex2f(23, columnColorOneInit16_23 + columnColorOne16_23);
 
-	glColor3f(0.094, 0.094, 0.094);
+		glVertex2f(17, columnColorOneInit17__22);
+		glVertex2f(23, columnColorOneInit17__22);
+		glVertex2f(23, columnColorOneInit17__22 + columnColorOne17__22);
+		glVertex2f(17, columnColorOneInit17__22 + columnColorOne17__22);
 
-	glVertex2f(14, columnColorTwoInit14_25);
-	glVertex2f(15, columnColorTwoInit14_25);
-	glVertex2f(15, columnColorTwoInit14_25 + columnColorTwo14_25);
-	glVertex2f(14, columnColorTwoInit14_25 + columnColorTwo14_25);
+		glColor3f(0.094, 0.094, 0.094);
 
-	glVertex2f(25, columnColorTwoInit14_25);
-	glVertex2f(26, columnColorTwoInit14_25);
-	glVertex2f(26, columnColorTwoInit14_25 + columnColorTwo14_25);
-	glVertex2f(25, columnColorTwoInit14_25 + columnColorTwo14_25);
+		glVertex2f(14, columnColorTwoInit14_25);
+		glVertex2f(15, columnColorTwoInit14_25);
+		glVertex2f(15, columnColorTwoInit14_25 + columnColorTwo14_25);
+		glVertex2f(14, columnColorTwoInit14_25 + columnColorTwo14_25);
 
-	glVertex2f(15, columnColorTwoInit15_24);
-	glVertex2f(16, columnColorTwoInit15_24);
-	glVertex2f(16, columnColorTwoInit15_24 + columnColorTwo15_24);
-	glVertex2f(15, columnColorTwoInit15_24 + columnColorTwo15_24);
+		glVertex2f(25, columnColorTwoInit14_25);
+		glVertex2f(26, columnColorTwoInit14_25);
+		glVertex2f(26, columnColorTwoInit14_25 + columnColorTwo14_25);
+		glVertex2f(25, columnColorTwoInit14_25 + columnColorTwo14_25);
 
-	glVertex2f(24, columnColorTwoInit15_24);
-	glVertex2f(25, columnColorTwoInit15_24);
-	glVertex2f(25, columnColorTwoInit15_24 + columnColorTwo15_24);
-	glVertex2f(24, columnColorTwoInit15_24 + columnColorTwo15_24);
+		glVertex2f(15, columnColorTwoInit15_24);
+		glVertex2f(16, columnColorTwoInit15_24);
+		glVertex2f(16, columnColorTwoInit15_24 + columnColorTwo15_24);
+		glVertex2f(15, columnColorTwoInit15_24 + columnColorTwo15_24);
 
-	glVertex2f(16, columnColorTwoInit16_23);
-	glVertex2f(17, columnColorTwoInit16_23);
-	glVertex2f(17, columnColorTwoInit16_23 + columnColorTwo16_23);
-	glVertex2f(16, columnColorTwoInit16_23 + columnColorTwo16_23);
+		glVertex2f(24, columnColorTwoInit15_24);
+		glVertex2f(25, columnColorTwoInit15_24);
+		glVertex2f(25, columnColorTwoInit15_24 + columnColorTwo15_24);
+		glVertex2f(24, columnColorTwoInit15_24 + columnColorTwo15_24);
 
-	glVertex2f(23, columnColorTwoInit16_23);
-	glVertex2f(24, columnColorTwoInit16_23);
-	glVertex2f(24, columnColorTwoInit16_23 + columnColorTwo16_23);
-	glVertex2f(23, columnColorTwoInit16_23 + columnColorTwo16_23);
+		glVertex2f(16, columnColorTwoInit16_23);
+		glVertex2f(17, columnColorTwoInit16_23);
+		glVertex2f(17, columnColorTwoInit16_23 + columnColorTwo16_23);
+		glVertex2f(16, columnColorTwoInit16_23 + columnColorTwo16_23);
 
-	glVertex2f(17, columnColorTwoInit17__22);
-	glVertex2f(23, columnColorTwoInit17__22);
-	glVertex2f(23, columnColorTwoInit17__22 + columnColorTwo17__22);
-	glVertex2f(17, columnColorTwoInit17__22 + columnColorTwo17__22);
+		glVertex2f(23, columnColorTwoInit16_23);
+		glVertex2f(24, columnColorTwoInit16_23);
+		glVertex2f(24, columnColorTwoInit16_23 + columnColorTwo16_23);
+		glVertex2f(23, columnColorTwoInit16_23 + columnColorTwo16_23);
 
-	glColor3f(0.145, 0.145, 0.145);
+		glVertex2f(17, columnColorTwoInit17__22);
+		glVertex2f(23, columnColorTwoInit17__22);
+		glVertex2f(23, columnColorTwoInit17__22 + columnColorTwo17__22);
+		glVertex2f(17, columnColorTwoInit17__22 + columnColorTwo17__22);
 
-	glVertex2f(18, columnColorThreeInit18_21);
-	glVertex2f(19, columnColorThreeInit18_21);
-	glVertex2f(19, columnColorThreeInit18_21 + columnColorThree18_21);
-	glVertex2f(18, columnColorThreeInit18_21 + columnColorThree18_21);
+		glColor3f(0.145, 0.145, 0.145);
 
-	glVertex2f(21, columnColorThreeInit18_21);
-	glVertex2f(22, columnColorThreeInit18_21);
-	glVertex2f(22, columnColorThreeInit18_21 + columnColorThree18_21);
-	glVertex2f(21, columnColorThreeInit18_21 + columnColorThree18_21);
+		glVertex2f(18, columnColorThreeInit18_21);
+		glVertex2f(19, columnColorThreeInit18_21);
+		glVertex2f(19, columnColorThreeInit18_21 + columnColorThree18_21);
+		glVertex2f(18, columnColorThreeInit18_21 + columnColorThree18_21);
 
-	glVertex2f(19, columnColorThreeInit19_20);
-	glVertex2f(21, columnColorThreeInit19_20);
-	glVertex2f(21, columnColorThreeInit19_20 + columnColorThree19_20);
-	glVertex2f(19, columnColorThreeInit19_20 + columnColorThree19_20);
+		glVertex2f(21, columnColorThreeInit18_21);
+		glVertex2f(22, columnColorThreeInit18_21);
+		glVertex2f(22, columnColorThreeInit18_21 + columnColorThree18_21);
+		glVertex2f(21, columnColorThreeInit18_21 + columnColorThree18_21);
 
-	glColor3f(1, 0.7216, 0.0);
+		glVertex2f(19, columnColorThreeInit19_20);
+		glVertex2f(21, columnColorThreeInit19_20);
+		glVertex2f(21, columnColorThreeInit19_20 + columnColorThree19_20);
+		glVertex2f(19, columnColorThreeInit19_20 + columnColorThree19_20);
 
-	glVertex2f(16, columnColorFourInit16_17_22_23);
-	glVertex2f(18, columnColorFourInit16_17_22_23);
-	glVertex2f(18, columnColorFourInit16_17_22_23 + columnColorFour16_17_22_23);
-	glVertex2f(16, columnColorFourInit16_17_22_23 + columnColorFour16_17_22_23);
+		glColor3f(1, 0.7216, 0.0);
 
-	glVertex2f(22, columnColorFourInit16_17_22_23);
-	glVertex2f(24, columnColorFourInit16_17_22_23);
-	glVertex2f(24, columnColorFourInit16_17_22_23 + columnColorFour16_17_22_23);
-	glVertex2f(22, columnColorFourInit16_17_22_23 + columnColorFour16_17_22_23);
+		glVertex2f(16, columnColorFourInit16_17_22_23);
+		glVertex2f(18, columnColorFourInit16_17_22_23);
+		glVertex2f(18, columnColorFourInit16_17_22_23 + columnColorFour16_17_22_23);
+		glVertex2f(16, columnColorFourInit16_17_22_23 + columnColorFour16_17_22_23);
 
-	glColor3f(0.969, 0.824, 0.455);
+		glVertex2f(22, columnColorFourInit16_17_22_23);
+		glVertex2f(24, columnColorFourInit16_17_22_23);
+		glVertex2f(24, columnColorFourInit16_17_22_23 + columnColorFour16_17_22_23);
+		glVertex2f(22, columnColorFourInit16_17_22_23 + columnColorFour16_17_22_23);
 
-	glVertex2f(16, columnColorFiveInit16_17_22_23);
-	glVertex2f(18, columnColorFiveInit16_17_22_23);
-	glVertex2f(18, columnColorFiveInit16_17_22_23 + columnColorFive16_17_22_23);
-	glVertex2f(16, columnColorFiveInit16_17_22_23 + columnColorFive16_17_22_23);
+		glColor3f(0.969, 0.824, 0.455);
 
-	glVertex2f(22, columnColorFiveInit16_17_22_23);
-	glVertex2f(24, columnColorFiveInit16_17_22_23);
-	glVertex2f(24, columnColorFiveInit16_17_22_23 + columnColorFive16_17_22_23);
-	glVertex2f(22, columnColorFiveInit16_17_22_23 + columnColorFive16_17_22_23);
+		glVertex2f(16, columnColorFiveInit16_17_22_23);
+		glVertex2f(18, columnColorFiveInit16_17_22_23);
+		glVertex2f(18, columnColorFiveInit16_17_22_23 + columnColorFive16_17_22_23);
+		glVertex2f(16, columnColorFiveInit16_17_22_23 + columnColorFive16_17_22_23);
+
+		glVertex2f(22, columnColorFiveInit16_17_22_23);
+		glVertex2f(24, columnColorFiveInit16_17_22_23);
+		glVertex2f(24, columnColorFiveInit16_17_22_23 + columnColorFive16_17_22_23);
+		glVertex2f(22, columnColorFiveInit16_17_22_23 + columnColorFive16_17_22_23);
 
 	glEnd();
 }
