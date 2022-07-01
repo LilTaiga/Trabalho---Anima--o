@@ -34,6 +34,9 @@ int main(int argc, char** argv)
 	init();
 	glutReshapeFunc(reshapeCallback);
 
+	// Como aqui o estado do mundo só avança quando apertamos espaço
+	// Não há a necessidade de uma função temporizadora para atualizar o mundo.
+
 	// A função de renderização e desenho do render na tela.
 	glutDisplayFunc(displayCallback);
 	glutKeyboardFunc(keybordCallback);
@@ -50,6 +53,7 @@ void init()
 
 // Aqui é onde a camera faz o render do mundo.
 // O render também é exibido na tela aqui
+// O tempo do mundo só passa depois de ter feito um render na tela.
 void displayCallback()
 {
 	glClear(GL_COLOR_BUFFER_BIT);

@@ -37,8 +37,8 @@ int main(int argc, char** argv)
 	init();
 
 	// Aqui uma função de timer é declarada.
-	// Como aqui é uma animação em em tempo real,
-	// precisamos desenhar na tela a imagem renderizada a cada 1 / FPS segundos.
+	// Como o mundo está sempre em movimento, precisamos de uma função temporizadora
+	// para atualizar o estado do mundo a cada 1 / FPS segundos.
 	glutTimerFunc(0, timerCallback, 0);
 	glutReshapeFunc(reshapeCallback);
 
@@ -71,6 +71,9 @@ void displayCallback()
 		glutSwapBuffers();
 		render = !render;
 	}
+
+	// Após a camera ter feito um render do mundo,
+	// ela não fazerá mais renders enquanto não apertar SPACE de novo.
 }
 
 // Remodela o viewPort para manter as proporções
@@ -90,8 +93,7 @@ void reshapeCallback(int w, int h)
 	glMatrixMode(GL_MODELVIEW);
 }
 
-// Aqui é um timer para re-renderizar o mundo a cada 1 / FPS segundos.
-// A re-renderização também é exibida na tela pela função de display.
+// Aqui é um timer para atualizar o estado do mundo a cada 1 / FPS segundos.
 void timerCallback(int)
 {
 	glutPostRedisplay();
